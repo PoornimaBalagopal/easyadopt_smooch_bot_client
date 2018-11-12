@@ -9,7 +9,7 @@
   Bots.destroy();
 
   Bots.init({ 
-    appId: '5be41887639bca0022071884',
+    appId: '5be97062ad54990022f4a6e0',
     fixedIntroPane: true,	
     businessName: "Oracle Digital Assistant",
     businessIconUrl: "https://smoochbotclient.herokuapp.com/images/header_image.png",
