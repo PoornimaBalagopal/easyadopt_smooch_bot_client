@@ -1,0 +1,26 @@
+{
+  "name": "smooch-web-master",
+  "version": "1.0.0",
+  "description": "[![npm version](https://badge.fury.io/js/smooch.svg)](http://badge.fury.io/js/smooch)",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PoornimaBalagopal/bot-client.git"
+  },
+  "keywords": [
+    "bot",
+    "client"
+  ],
+  "author": "poornima balagopal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PoornimaBalagopal/bot-client/issues"
+  },
+  "homepage": "https://github.com/PoornimaBalagopal/bot-client#readme"
+}
