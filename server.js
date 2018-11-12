@@ -17,7 +17,7 @@ var compression = require('compression');
 var app = express();
 app.use(compression());
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 5011);
 //app.set('host', process.env.NODE_IP || 'localhost');
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,7 +31,8 @@ if (app.get('env') === 'production') {
     });
 }
 //app.use(h5bp({ root: __dirname + '/dist' }));
-app.use(express.static(path.join(__dirname, '/app')));
+app.use(express.static(path.join(__dirname, '/scripts')));
+app.use(express.static(path.join(__dirname, '/images')));
 app.use('/', express.static(path.join(__dirname, '/')))
 
 /* setInterval(function () {
