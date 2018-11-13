@@ -12,7 +12,7 @@
     appId: '5be97062ad54990022f4a6e0',
     fixedIntroPane: true,	
     businessName: "Oracle Digital Assistant",
-    businessIconUrl: "https://smoochbotclient.herokuapp.com/images/header_image.png",
+    businessIconUrl: "https://smoochbotclient.herokuapp.com/images/Group10.svg",
 	customColors: {
         brandColor: '65758e',
         conversationColor: '65758e',
