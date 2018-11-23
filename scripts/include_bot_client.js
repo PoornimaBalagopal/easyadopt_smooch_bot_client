@@ -23,4 +23,14 @@
 			introductionText: 'Oracle Digital Assistant for SaaS',
 			
         }
-  });
+  })
+  
+  .then(function addCustomTagStyling() {
+    const chatFrame = document.getElementById("web-messenger-container").contentDocument;
+    const cssLink = document.createElement("link");
+    cssLink.href = "custom_tag_styling.css";
+    cssLink.rel = "stylesheet";
+    cssLink.type = "text/css";
+
+    chatFrame.head.appendChild(cssLink);
+  })

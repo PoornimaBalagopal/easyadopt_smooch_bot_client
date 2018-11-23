@@ -1,0 +1,32 @@
+ea_header, ea_mainresponse, ea_inresplink, ea_footer, ea_info {
+    display: block;
+    font-size: smaller;
+    padding: 10px 0px;
+}
+
+ea_header::first-letter{
+    text-transform: capitalize
+}
+
+ea_header {
+    text-align: center;
+    background: #e3e3e3;
+}
+
+ea_mainresponse {
+}
+
+ea_inresplink {
+}
+
+a {
+    text-decoration: none;
+}
+
+ea_footer, ea_info {
+    text-align: center;
+    text-decoration: none;
+    background: #e3e3e3;
+    margin: 5px 0;
+    color: initial;
+}

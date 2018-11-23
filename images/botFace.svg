@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="46px" viewBox="0 0 66 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#9D9D9D" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-53.8%" y="-901.7%" width="207.5%" height="1903.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2 0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1031.000000, -484.000000)">
+            <g id="Group-22" transform="translate(1008.000000, 419.000000)">
+                <g id="Group-10" transform="translate(24.000000, 66.000000)">
+                    <rect id="Rectangle" stroke="#929292" stroke-width="0.5" fill="url(#linearGradient-1)" x="-0.25" y="-0.25" width="64.5" height="44.4168242" rx="22.2084121"></rect>
+                    <g id="Rectangle" transform="translate(7.876923, 7.984877)">
+                        <path d="M20.8071161,28.1831819 L14.0563163,33.6030246 L14.0563163,28.1831394 C6.28996529,28.1641093 9.51649662e-16,21.8624002 0,14.091591 C-9.5309004e-16,6.30902017 6.30902017,1.42963506e-15 14.091591,0 L34.482768,-3.55271368e-15 C42.2653388,-4.98234874e-15 48.574359,6.30902017 48.574359,14.091591 C48.574359,21.8741617 42.2653388,28.1831819 34.482768,28.1831819 L20.8071161,28.1831819 Z" id="Mask" fill="#3C6179"></path>
+                        <path d="M29.4339964,-2.67307638e-15 L34.482768,-3.55271368e-15 C42.2653388,-4.98234874e-15 48.574359,6.30902017 48.574359,14.091591 C48.574359,21.8741617 42.2653388,28.1831819 34.482768,28.1831819 L20.9478982,28.1831819 L29.4339964,-2.22044605e-15 Z" id="Combined-Shape" fill="#2F536A"></path>
+                    </g>
+                    <g id="Eye" transform="translate(19.692308, 15.637051)" fill="#B7D6E5">
+                        <ellipse id="Oval" cx="3.28205128" cy="3.32703214" rx="3.28205128" ry="3.32703214"></ellipse>
+                    </g>
+                    <g id="Eye" transform="translate(37.743590, 15.637051)" fill="#B7D6E5">
+                        <ellipse id="Oval" cx="3.28205128" cy="3.32703214" rx="3.28205128" ry="3.32703214"></ellipse>
+                    </g>
+                    <path d="M26.5846154,26.9489603 C28.5330077,27.1707624 30.4223579,27.2816635 32.2526659,27.2816635 C34.0829738,27.2816635 35.9132818,27.1707624 37.7435897,26.9489603 L37.7435897,26.9489603 C37.7435897,27.1394435 37.6009448,27.2997402 37.4117507,27.3218632 C35.7439664,27.5168576 34.0242724,27.6143667 32.2526659,27.6143667 C30.4739163,27.6143667 28.6951667,27.5160697 26.9164171,27.3194756 L26.9164192,27.3194567 C26.7275509,27.2985823 26.5846154,27.1389787 26.5846154,26.9489603 Z" id="Rectangle" fill="#FFFFFF" filter="url(#filter-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
