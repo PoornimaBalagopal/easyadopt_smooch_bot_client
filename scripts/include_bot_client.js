@@ -9,7 +9,7 @@
   Bots.destroy();
 
   Bots.init({ 
-    appId: '5beee04588adec0022306582',
+    appId: '5c01651aae57e400227ffc66',
     fixedIntroPane: true,	
     businessName: "Oracle Digital Assistant",
     businessIconUrl: "https://smoochbotclient.herokuapp.com/images/Group10.svg",
@@ -19,8 +19,8 @@
         actionColor: '65758e',
     },
 	 customText: {
-            headerText:'Easy Adopt',
-			introductionText: 'Oracle Digital Assistant for SaaS',
+            headerText:'How can I help?',
+			introductionText: 'EasyAdopt Skills',
 			
         }
   })
