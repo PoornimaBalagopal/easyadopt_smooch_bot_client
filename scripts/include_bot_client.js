@@ -13,7 +13,7 @@
   Bots.on("message:received", deleteTagsInCarouselPreview);
 
   Bots.init({ 
-    appId: '5bf54b2e82603a00228f3541',
+    appId: '5c01665c5f32d4002221bd26',
     fixedIntroPane: true,	
     businessName: "Oracle Digital Assistant",
     businessIconUrl: "https://botclientformatresponse.herokuapp.com/images/Group10.svg",
