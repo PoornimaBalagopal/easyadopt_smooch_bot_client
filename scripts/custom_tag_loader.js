@@ -72,7 +72,9 @@ function changeLastMessage(messageReceived) {
     const botMessages = chatFrame.querySelectorAll(".msg-wrapper .msg:not(.msg-carousel):not(.right-row)");
     let lastMessage = botMessages[botMessages.length -1];
     
-    lastMessage.innerHTML = unescapeMessage(lastMessage.innerHTML);
+   // lastMessage.innerHTML = unescapeMessage(lastMessage.innerHTML);
+  
+	if (/ea/g.test(lastMessage.innerHTML)) lastMessage.innerHTML = unescapeMessage(lastMessage.innerHTML);
 
     lastMessage.querySelectorAll("ea-video").forEach(ea_video);
     lastMessage.querySelectorAll("ea-footer").forEach(ea_footer);
