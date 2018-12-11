@@ -42,10 +42,11 @@
     cssLink.href = "https://smoochbotclient.herokuapp.com/custom_tag_styling.css";
     cssLink.rel = "stylesheet";
     cssLink.type = "text/css";
-    chatFrame.head.appendChild(cssLink);	
 	//for clear conversation button
 	 chatFrame.getElementById("intro_text").appendChild(space); 
 	chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
+    chatFrame.head.appendChild(cssLink);	
+	
   })
   //function for initiating the bot for clear button
   function initBots(appId){
@@ -78,10 +79,11 @@
     cssLink.href = "https://smoochbotclient.herokuapp.com/custom_tag_styling.css";
     cssLink.rel = "stylesheet";
     cssLink.type = "text/css";
-    chatFrame.head.appendChild(cssLink);	
 	//for clear conversation button
 	 chatFrame.getElementById("intro_text").appendChild(space); 
 	chatFrame.getElementById("intro_text").appendChild(addClearButton());  
+    chatFrame.head.appendChild(cssLink);	
+	
     });
 }
 //function for the clear button
