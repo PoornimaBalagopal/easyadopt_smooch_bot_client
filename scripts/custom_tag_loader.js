@@ -18,7 +18,7 @@ const tags = [
 
 function deleteTags(message) {
     for (let i in tags) message = message.replace(new RegExp(tags[i].escaped, "g"), "");
-    return message.replace(/&lt;.?ea_\w+>?/g, "");
+    return message.replace(/&lt;?.ea-\w+(?:&gt, "");
 }
 
 function unescapeMessage(message) {
