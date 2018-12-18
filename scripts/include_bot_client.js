@@ -50,6 +50,9 @@
   })
   //function for initiating the bot for clear button
   function initBots(appId){
+   Bots.on("ready", changeAllTags);
+  Bots.on("message:received", changeLastMessage);
+  Bots.on("message:received", deleteTagsInCarouselPreview);  
     return Bots.init({
         appId: appId,
 		    fixedIntroPane: true,	
