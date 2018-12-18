@@ -3,11 +3,11 @@
     }(window, document, "Bots", "https://smoochbotclient.herokuapp.com/scripts");
 
   // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - starts here
-  var keys = Object.keys(localStorage);
+  /*var keys = Object.keys(localStorage);
   for(var i = 0; i < keys.length; i++){
     localStorage.removeItem(keys[i]);
   }
-  Bots.destroy(); 
+  Bots.destroy(); */
   Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
