@@ -12,7 +12,7 @@
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
 	// *********** change the app id based on the Digital Assistant/Bot's channel id *************
-  var appId = "5c01665c5f32d4002221bd26";
+  var appId = "5c01651aae57e400227ffc66";
   
   // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - ends here
   // variables for the additional styling and clear button - starts here
