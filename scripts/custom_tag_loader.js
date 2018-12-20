@@ -66,6 +66,7 @@ function changeAllTags() {
     chatFrame.querySelectorAll("ea-steps").forEach(ea_steps);
     chatFrame.querySelectorAll("ea-step").forEach(ea_step);
     chatFrame.querySelectorAll("ea-link").forEach(ea_link);
+	deleteTagsInCarouselPreview();
 }
 
 function changeLastMessage(messageReceived) {
