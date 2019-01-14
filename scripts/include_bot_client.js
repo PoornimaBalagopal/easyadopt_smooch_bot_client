@@ -13,7 +13,9 @@
   var images_URI = '';
   if(window.location.host.includes('.fa.us2.oraclecloud.com')){
   var xmlHttp = new XMLHttpRequest();
+   console.log('test -- : '+'https://smoochbotclient.herokuapp.com/json/'+window.location.href.substring(window.location.href.indexOf('.')+1,window.location.href.indexOf('.fa.'))+'.json');
     xmlHttp.open( "GET", 'https://smoochbotclient.herokuapp.com/json/'+window.location.href.substring(window.location.href.indexOf('.')+1,window.location.href.indexOf('.fa.'))+'.json', false ); // false for synchronous request
+	
     xmlHttp.send( null );
     if(xmlHttp.status == 200) {
       console.log('Configuration for chat fetched successfully');
