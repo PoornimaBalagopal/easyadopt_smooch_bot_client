@@ -176,7 +176,7 @@ function addClearButton()
 	imgTag.alt= "Clear icon";
 	imgTag.height= "15";
 	imgTag.width=  "15";
-	imgTag.src= "hhttps://smoochbotclient.herokuapp.com/images/clearicon.svg";	
+	imgTag.src= "https://smoochbotclient.herokuapp.com/images/clearicon.svg";	
 
 	// clearButton.innerHTML = "Clear Conversation ";
 	 clearButton.setAttribute("id", "clearConvId");
