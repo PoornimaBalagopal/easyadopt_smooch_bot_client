@@ -18,12 +18,13 @@ var diff;
 var botuser;
 var hiflag;
 var bot = {};
-if(/fa-ext/.test(Servlet_uri)){
+	getJWT();
+/*if(/fa-ext/.test(Servlet_uri)){
 	getJWT();
 }else
 {
 		console.log("NOT FA EMBEDDED")
-	}
+	}*/
 	
   // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - ends here
   // variables for the additional styling and clear button - starts here  
