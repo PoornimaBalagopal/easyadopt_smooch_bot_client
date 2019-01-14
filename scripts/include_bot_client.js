@@ -19,6 +19,7 @@
     xmlHttp.send( null );
     if(xmlHttp.status == 200) {
       console.log('Configuration for chat fetched successfully');
+	      console.log('xmlHttp.responseText '+xmlHttp.responseText);
       response=JSON.parse(xmlHttp.responseText);
       authAppId=response['webchannel-appId'];
       images_URI=response['images_serveruri'];
