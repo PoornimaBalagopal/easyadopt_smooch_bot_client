@@ -37,6 +37,7 @@ var bot = {};
 
 	var retrievedObject = localStorage.getItem('bot');
 	if(retrievedObject===null){
+		console.log('retrievedObject: ', retrievedObject);
 	 var startDate = new Date();
 		 
 		  bot['botuser']=user_id;
@@ -51,7 +52,7 @@ var bot = {};
 	botuser = retreivedbotvalues["botuser"];
 	var lastDate = new Date(retreivedbotvalues["time"]);
 	hiflag = retreivedbotvalues["hiflag"];
-
+	console.log('botuser: ', botuser);
 	var startDate = new Date();
 	diff =(startDate.getTime() - lastDate.getTime()) / 1000;
 	  diff /= 60;
@@ -65,8 +66,6 @@ var bot = {};
      }
      Bots.destroy();
 	 var startDate = new Date();
-	 
-	 
 	   bot['botuser']=user_id;
 		bot['time']=startDate;
 		bot['hiflag']=false;
@@ -105,20 +104,18 @@ var bot = {};
 		},
 		 customText: {
 				headerText:'How can I help?',
-				introductionText: 'EasyAdopt Skills',
-				
+				introductionText: 'EasyAdopt Skills',				
 			}
-
 	  })
 	   .then(function addCustomTagStyling() {
+		 Bots.updateUser({
+			"givenName": access_token,
+			"surname": user_id + "-webchannel"
+		})
 		const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		var introPane = document.getElementById('intro_pane');  
 		 chatFrame.getElementById("intro_text").appendChild(space); 
 		chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
-			Bots.updateUser({
-			"givenName": access_token,
-			"surname": user_id + "-webchannel"
-		})
 	  });
 }
 	
