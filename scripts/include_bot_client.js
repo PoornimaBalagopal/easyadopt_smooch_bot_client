@@ -3,12 +3,11 @@
     }(window, document, "Bots", "https://smoochbotclient.herokuapp.com/scripts");
 
 // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - starts here
-  var keys = Object.keys(localStorage);
+  /*var keys = Object.keys(localStorage);
   for(var i = 0; i < keys.length; i++){
     localStorage.removeItem(keys[i]);
   }
-<<<<<<< HEAD
-  Bots.destroy(); 
+  Bots.destroy(); */
   var appId = "5c36e2e0dbc7b20022182bff";
   //var authAppId = '';
   var images_URI = '';
@@ -45,15 +44,6 @@ if(/fa-ext/.test(Servlet_uri)){
 		console.log("NOT FA EMBEDDED")
 	}
 	
-=======
-  Bots.destroy(); */
-  Bots.on("ready", changeAllTags);
-  Bots.on("message:received", changeLastMessage);
-  Bots.on("message:received", deleteTagsInCarouselPreview);
-	// *********** change the app id based on the Digital Assistant/Bot's channel id *************
-  var appId = "5c36e2e0dbc7b20022182bff";
-  
->>>>>>> b7a43cac8c06ce133469c768d46fa6812ea8a1ea
   // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - ends here
   // variables for the additional styling and clear button - starts here  
   
@@ -204,7 +194,7 @@ function addClearButton()
 	imgTag.alt= "Clear icon";
 	imgTag.height= "15";
 	imgTag.width=  "15";
-	imgTag.src= "https://smoochbotclient.herokuapp.com/images/clearicon.svg";	
+	imgTag.src= "hhttps://smoochbotclient.herokuapp.com/images/clearicon.svg";	
 
 	// clearButton.innerHTML = "Clear Conversation ";
 	 clearButton.setAttribute("id", "clearConvId");
