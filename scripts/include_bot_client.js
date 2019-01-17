@@ -212,10 +212,14 @@ function getJWT() {
 	if(xhttp.readyState === 4 && xhttp.status === 200) {
 		
 		access_token=JSON.parse(xhttp.responseText).access_token;
+		console.log("------JSON DATA------");
+		console.log(JSON.parse(xhttp.responseText));
+		console.log("------------");
 		user_id=JSON.parse(xhttp.responseText).principal;
 		set_localstorage();
 	}
 	};
 	xhttp.send();
 	
-} 
+}
+ 
