@@ -9,7 +9,9 @@
   }
   Bots.destroy(); */
   var appId = "5c36e2e0dbc7b20022182bff";
- 
+   Bots.on("ready", changeAllTags);
+  Bots.on("message:received", changeLastMessage);
+  Bots.on("message:received", deleteTagsInCarouselPreview);
  
  var access_token=null;
 var user_id=null;
@@ -58,8 +60,7 @@ var bot = {};
 	  diff /= 60;
 	//clear the local storage if the logged-in user is different or time exceeds 2 hrs
 	console.log(diff);
-	if(diff > 120 || botuser!=user_id){
-    
+	if(diff > 120 || botuser!=user_id){    
 	var keys = Object.keys(localStorage);
      for(var i = 0; i < keys.length; i++){
       localStorage.removeItem(keys[i]);
@@ -112,10 +113,15 @@ var bot = {};
 			"givenName": access_token,
 			"surname": user_id + "-webchannel"
 		})
-		const chatFrame = document.getElementById("web-messenger-container").contentDocument;
-		var introPane = document.getElementById('intro_pane');  
+		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
+		const cssLink = document.createElement("link");
+		cssLink.href = "https://smoochbotclient.herokuapp.com/custom_tag_styling.css";
+		cssLink.rel = "stylesheet";
+		cssLink.type = "text/css";
+		//for clear conversation button
 		 chatFrame.getElementById("intro_text").appendChild(space); 
 		chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
+		chatFrame.head.appendChild(cssLink);	
 	  });
 	  
 	  function initBots(appId){
@@ -142,14 +148,21 @@ var bot = {};
         
     })
      .then(function addCustomTagStyling() {
-	const chatFrame = document.getElementById("web-messenger-container").contentDocument;
-	var introPane = document.getElementById('intro_pane'); 		 
-	 chatFrame.getElementById("intro_text").appendChild(space); 
-	chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
-	Bots.updateUser({
+		 Bots.updateUser({
 			"givenName": access_token,
 			"surname": user_id + "-webchannel"
 		})
+		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
+		 //for clear conversation button
+		 chatFrame.getElementById("intro_text").appendChild(space); 
+		chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
+		const cssLink = document.createElement("link");
+		cssLink.href = "https://smoochbotclient.herokuapp.com/custom_tag_styling.css";
+		cssLink.rel = "stylesheet";
+		cssLink.type = "text/css";
+		 
+		chatFrame.head.appendChild(cssLink); 
+	
     });
 }
 function addClearButton()
