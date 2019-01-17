@@ -111,7 +111,7 @@ var bot = {};
 	   .then(function addCustomTagStyling() {
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id + "-webchannel"
+			"surname": user_id
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		const cssLink = document.createElement("link");
@@ -150,7 +150,7 @@ var bot = {};
      .then(function addCustomTagStyling() {
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id + "-webchannel"
+			"surname": user_id
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		 //for clear conversation button
@@ -211,16 +211,11 @@ function getJWT() {
 	xhttp.onreadystatechange = function () {
 	if(xhttp.readyState === 4 && xhttp.status === 200) {
 		
-		access_token=JSON.parse(xhttp.responseText).access_token;
-		console.log("------JSON  access_token- user_id-----");
-		console.log(xhttp.responseText);
-		user_id=JSON.parse(xhttp.responseText).principal;
-		console.log(user_id);
-		console.log("------------");
+		access_token=JSON.parse(xhttp.responseText).access_token;		
+		user_id=JSON.parse(xhttp.responseText).principal;		
 		set_localstorage();
 	}
 	};
 	xhttp.send();
 	
-}
- 
+} 
