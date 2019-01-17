@@ -109,6 +109,7 @@ var bot = {};
 			}
 	  })
 	   .then(function addCustomTagStyling() {
+		   
 		 Bots.updateUser({
 			"givenName": access_token,
 			"surname": user_id
@@ -125,6 +126,9 @@ var bot = {};
 	  });
 	  
 	  function initBots(appId){
+		 Bots.on("ready", changeAllTags);
+		Bots.on("message:received", changeLastMessage);
+		Bots.on("message:received", deleteTagsInCarouselPreview);  
     return Bots.init({
         appId: appId,
 		    fixedIntroPane: true,	
