@@ -81,7 +81,7 @@ var bot = {};
 		bot=JSON.parse(retrievedObject);
 		hiflag = bot['hiflag'];
 		if(diff >= 120 || botuser!=user_id || hiflag==false){
-		Bots.sendMessage("Hi");
+		//Bots.sendMessage("Hi");
 		bot['hiflag']=true;
 		localStorage.setItem('bot', JSON.stringify(bot));
 		}
