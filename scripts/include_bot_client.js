@@ -146,6 +146,10 @@ var bot = {};
 	var introPane = document.getElementById('intro_pane'); 		 
 	 chatFrame.getElementById("intro_text").appendChild(space); 
 	chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
+	Bots.updateUser({
+			"givenName": access_token,
+			"surname": user_id + "-webchannel"
+		})
     });
 }
 function addClearButton()
@@ -201,5 +205,4 @@ function getJWT() {
 	};
 	xhttp.send();
 	
-}
- 
+} 
