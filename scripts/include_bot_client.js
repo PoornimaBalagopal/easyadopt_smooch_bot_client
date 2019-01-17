@@ -213,7 +213,7 @@ function getJWT() {
 		
 		access_token=JSON.parse(xhttp.responseText).access_token;
 		console.log("------JSON  access_token- user_id-----");
-		
+		console.log(xhttp.responseText);
 		user_id=JSON.parse(xhttp.responseText).principal;
 		console.log(user_id);
 		console.log("------------");
