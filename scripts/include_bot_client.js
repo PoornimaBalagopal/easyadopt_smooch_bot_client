@@ -12,7 +12,8 @@
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
- 
+ var userLanguage = document.getElementsByTagName('html')[0].getAttribute('lang');
+ console.log("---- language from html:"+userLanguage);
  var access_token=null;
 var user_id=null;
 var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
