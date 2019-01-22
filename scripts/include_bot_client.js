@@ -221,7 +221,10 @@ function getJWT() {
 	xhttp.onreadystatechange = function () {
 	if(xhttp.readyState === 4 && xhttp.status === 200) {
 		
-		access_token=JSON.parse(xhttp.responseText).access_token;		
+		access_token=JSON.parse(xhttp.responseText).access_token;	
+		console.log ("---");
+		console.log(xhttp.responseText);
+		console.log("---");
 		user_id=JSON.parse(xhttp.responseText).principal;		
 		set_localstorage();
 	}
