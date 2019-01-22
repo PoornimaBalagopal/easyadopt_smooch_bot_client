@@ -112,7 +112,10 @@ var bot = {};
 		   
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id
+			"surname": user_id,
+			 properties: {
+			  language: "nl"
+		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		const cssLink = document.createElement("link");
@@ -154,7 +157,10 @@ var bot = {};
      .then(function addCustomTagStyling() {
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id
+			"surname": user_id,
+			 properties: {
+			  language: "nl"
+		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		 //for clear conversation button
