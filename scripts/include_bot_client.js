@@ -12,8 +12,8 @@
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
- var userLanguage = document.getElementById('easyAdoptLocale').value;
-  var userName = document.getElementById('easyAdoptUserName').value;
+ var userLanguage = document.getElementById("easyAdoptLocale").value; 
+  var userName = document.getElementById("easyAdoptUserName").value; 
  console.log("---- language from html:"+userLanguage);
  console.log("---- language from html:"+userName);
  var access_token=null;
