@@ -13,9 +13,10 @@
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
  var userLanguage = document.getElementById("easyAdoptLocale").value; 
-  var userName = document.getElementById("easyAdoptUserName").value; 
- console.log("---- language from html:"+userLanguage);
- console.log("---- language from html:"+userName);
+ var userFullName = document.getElementById("easyAdoptUserName").value; 
+  var n = userFullName.indexOf(" ");
+ var firstName = userFullName.substring(0, n);
+  var lastName = userFullName.substring(n,userFullName.length);
  var access_token=null;
 var user_id=null;
 var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
@@ -114,10 +115,12 @@ var bot = {};
 	   .then(function addCustomTagStyling() {
 		   
 		 Bots.updateUser({
-			"givenName": access_token,
-			"surname": userName,
+			"givenName": firstName,
+			"surname": lastName,
+			"access_token": access_token,			
 			 properties: {
-			  language: userLanguage			  
+			  language: userLanguage,
+			  fullName: userFullName
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
@@ -159,10 +162,12 @@ var bot = {};
     })
      .then(function addCustomTagStyling() {
 		 Bots.updateUser({
-			"givenName": access_token,
-			"surname": userName,
+			"givenName": firstName,
+			"surname": lastName,
+			"access_token": access_token,
 			 properties: {
-			  language: userLanguage			  
+			  language: userLanguage,
+			  fullName: userFullName
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
@@ -224,10 +229,7 @@ function getJWT() {
 	xhttp.onreadystatechange = function () {
 	if(xhttp.readyState === 4 && xhttp.status === 200) {
 		
-		access_token=JSON.parse(xhttp.responseText).access_token;	
-		console.log ("---");
-		console.log(xhttp.responseText);
-		console.log("---");
+		access_token=JSON.parse(xhttp.responseText).access_token;			
 		user_id=JSON.parse(xhttp.responseText).principal;		
 		set_localstorage();
 	}
