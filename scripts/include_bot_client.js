@@ -12,8 +12,10 @@
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
- var userLanguage = document.getElementsByTagName('html')[0].getAttribute('lang');
+ var userLanguage = document.getElementById('easyAdoptLocale').value;
+  var userName = document.getElementById('easyAdoptUserName').value;
  console.log("---- language from html:"+userLanguage);
+ console.log("---- language from html:"+userName);
  var access_token=null;
 var user_id=null;
 var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
@@ -113,9 +115,9 @@ var bot = {};
 		   
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id,
+			"surname": userName,
 			 properties: {
-			  language: "nl"
+			  language: userLanguage			  
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
@@ -158,9 +160,9 @@ var bot = {};
      .then(function addCustomTagStyling() {
 		 Bots.updateUser({
 			"givenName": access_token,
-			"surname": user_id,
+			"surname": userName,
 			 properties: {
-			  language: "nl"
+			  language: userLanguage			  
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
