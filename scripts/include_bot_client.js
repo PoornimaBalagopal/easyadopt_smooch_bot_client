@@ -12,11 +12,11 @@
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
- var userLanguage = document.getElementById("easyAdoptLocale").value; 
- var userFullName = document.getElementById("easyAdoptUserName").value; 
-  var n = userFullName.indexOf(" ");
- var firstName = userFullName.substring(0, n);
-  var lastName = userFullName.substring(n,userFullName.length);
+ var userLanguage ; 
+ var userFullName ;
+ 
+ var firstName;
+  var lastName;
  var access_token=null;
 var user_id=null;
 var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
@@ -38,7 +38,12 @@ var bot = {};
 	var space = document.createElement("span");
     space.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
    // variables for the additional styling and clear button - ends here
- function set_localstorage(){	
+ function set_localstorage(){
+ userLanguage = document.getElementById("easyAdoptLocale").value; 
+ userFullName = document.getElementById("easyAdoptUserName").value; 
+  var n = userFullName.indexOf(" ");
+  firstName = userFullName.substring(0, n);
+  lastName = userFullName.substring(n,userFullName.length);	 
   var fap = window.location.host.split('-')[1];
 
 	var retrievedObject = localStorage.getItem('bot');
