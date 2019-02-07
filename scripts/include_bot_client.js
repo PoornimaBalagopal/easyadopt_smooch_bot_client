@@ -8,7 +8,7 @@
     localStorage.removeItem(keys[i]);
   }
   Bots.destroy(); */
-  var appId = "5c36e2e0dbc7b20022182bff";
+  var appId = "5c5c3366f703f80022c14119";
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
