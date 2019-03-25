@@ -9,7 +9,7 @@ const tags = [
     {unescaped: "</ea-video>",        escaped: "&lt;/ea-video&gt;"},
     {unescaped: "<ea-steps>",         escaped: "&lt;ea-steps&gt;"},
     {unescaped: "</ea-steps>",        escaped: "&lt;/ea-steps&gt;"},
-	{unescaped: "<ea-link>",         escaped: "&lt;ea-link&gt;"},  
+    {unescaped: "</ea-link>",         escaped: "&lt;/ea-link&gt;"},
     {unescaped: "<ea-step>",          escaped: "&lt;ea-step&gt;"},
     {unescaped: "</ea-step>",         escaped: "&lt;/ea-step&gt;"},
     {unescaped: '<ea-link href="',    escaped: '&lt;ea-link href="'},
