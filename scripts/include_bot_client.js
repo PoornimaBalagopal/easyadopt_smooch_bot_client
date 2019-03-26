@@ -58,17 +58,15 @@ var bot = {};
 			localStorage.setItem('bot', JSON.stringify(bot));
 			retrievedObject = localStorage.getItem('bot');
 	}
-	var retreivedbotvalues = JSON.parse(retrievedObject);
-	console.log('retrievedObject: ', JSON.parse(retrievedObject));
+	var retreivedbotvalues = JSON.parse(retrievedObject);	
 	botuser = retreivedbotvalues["botuser"];
 	var lastDate = new Date(retreivedbotvalues["time"]);
-	hiflag = retreivedbotvalues["hiflag"];
-	console.log('botuser: ', botuser);
+	hiflag = retreivedbotvalues["hiflag"];	
 	var startDate = new Date();
 	diff =(startDate.getTime() - lastDate.getTime()) / 1000;
 	  diff /= 60;
 	//clear the local storage if the logged-in user is different or time exceeds 2 hrs
-	console.log(diff);
+	
 	if(diff > 120 || botuser!=user_id){    
 	var keys = Object.keys(localStorage);
      for(var i = 0; i < keys.length; i++){
