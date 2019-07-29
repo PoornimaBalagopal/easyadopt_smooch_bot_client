@@ -1,6 +1,6 @@
   !function(e,n,t,r){
   function o(){try{var e;if((e="string"==typeof this.response?JSON.parse(this.response):this.response).url){var t=n.getElementsByTagName("script")[0],r=n.createElement("script");r.async=!0,r.src=e.url,t.parentNode.insertBefore(r,t)}}catch(e){}}var s,p,a,i=[],c=[];e[t]={init:function(){s=arguments;var e={then:function(n){return c.push({type:"t",next:n}),e},catch:function(n){return c.push({type:"c",next:n}),e}};return e},on:function(){i.push(arguments)},render:function(){p=arguments},destroy:function(){a=arguments}},        e.__onWebMessengerHostReady__=function(n){if(delete e.__onWebMessengerHostReady__,e[t]=n,s)for(var r=n.init.apply(n,s),o=0;o<c.length;o++){var u=c[o];r="t"===u.type?r.then(u.next):r.catch(u.next)}p&&n.render.apply(n,p),a&&n.destroy.apply(n,a);for(o=0;o<i.length;o++)n.on.apply(n,i[o])};var u=new XMLHttpRequest;u.addEventListener("load",o), u.addEventListener("load", s), u.open("GET", r+"/loader.json", !0),u.responseType = "json", u.send()
-    }(window, document, "Bots", "https://smoochbotclient.herokuapp.com/scripts");
+    }(window, document, "Bots", "https://eabotclient.herokuapp.com/scripts");
 
 // this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - starts here
   /*var keys = Object.keys(localStorage);
@@ -99,7 +99,7 @@ var bot = {};
 		appId: appId,	
 		fixedIntroPane: true,	
 		businessName: "Oracle Digital Assistant",	
-		businessIconUrl: "https://smoochbotclient.herokuapp.com/images/Group10.svg",	
+		businessIconUrl: "https://eabotclient.herokuapp.com/images/Group10.svg",	
 		customColors: {
 			brandColor: '65758e',
 			conversationColor: '65758e',
@@ -128,7 +128,7 @@ var bot = {};
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
 		const cssLink = document.createElement("link");
-		cssLink.href = "https://smoochbotclient.herokuapp.com/css/custom_tag_styling.css";
+		cssLink.href = "https://eabotclient.herokuapp.com/css/custom_tag_styling.css";
 		cssLink.rel = "stylesheet";
 		cssLink.type = "text/css";
 		//for clear conversation button
@@ -145,7 +145,7 @@ var bot = {};
         appId: appId,
 		    fixedIntroPane: true,	
 			businessName: "Oracle Digital Assistant",	
-			businessIconUrl: "https://smoochbotclient.herokuapp.com/images/Group10.svg",	
+			businessIconUrl: "https://eabotclient.herokuapp.com/images/Group10.svg",	
 			customColors: {
 				brandColor: '65758e',
 				conversationColor: '65758e',
@@ -178,7 +178,7 @@ var bot = {};
 		 chatFrame.getElementById("intro_text").appendChild(space); 
 		chatFrame.getElementById("intro_text").appendChild(addClearButton()); 
 		const cssLink = document.createElement("link");
-		cssLink.href = "https://smoochbotclient.herokuapp.com/css/custom_tag_styling.css";
+		cssLink.href = "https://eabotclient.herokuapp.com/css/custom_tag_styling.css";
 		cssLink.rel = "stylesheet";
 		cssLink.type = "text/css";
 		 
@@ -194,7 +194,7 @@ function addClearButton()
 	imgTag.alt= "Clear icon";
 	imgTag.height= "15";
 	imgTag.width=  "15";
-	imgTag.src= "https://smoochbotclient.herokuapp.com/images/clearicon.svg";	
+	imgTag.src= "https://eabotclient.herokuapp.com/images/clearicon.svg";	
 
 	// clearButton.innerHTML = "Clear Conversation ";
 	 clearButton.setAttribute("id", "clearConvId");
