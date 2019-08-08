@@ -2,29 +2,11 @@
   function o(){try{var e;if((e="string"==typeof this.response?JSON.parse(this.response):this.response).url){var t=n.getElementsByTagName("script")[0],r=n.createElement("script");r.async=!0,r.src=e.url,t.parentNode.insertBefore(r,t)}}catch(e){}}var s,p,a,i=[],c=[];e[t]={init:function(){s=arguments;var e={then:function(n){return c.push({type:"t",next:n}),e},catch:function(n){return c.push({type:"c",next:n}),e}};return e},on:function(){i.push(arguments)},render:function(){p=arguments},destroy:function(){a=arguments}},        e.__onWebMessengerHostReady__=function(n){if(delete e.__onWebMessengerHostReady__,e[t]=n,s)for(var r=n.init.apply(n,s),o=0;o<c.length;o++){var u=c[o];r="t"===u.type?r.then(u.next):r.catch(u.next)}p&&n.render.apply(n,p),a&&n.destroy.apply(n,a);for(o=0;o<i.length;o++)n.on.apply(n,i[o])};var u=new XMLHttpRequest;u.addEventListener("load",o), u.addEventListener("load", s), u.open("GET", r+"/loader.json", !0),u.responseType = "json", u.send()
     }(window, document, "Bots", "https://eabotclient.herokuapp.com/scripts");
 
-// this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - starts here
-  /*var keys = Object.keys(localStorage);
-  for(var i = 0; i < keys.length; i++){
-    localStorage.removeItem(keys[i]);
-  }
-  Bots.destroy(); */
   var appId = "5ca5945ea1e73000102b025a";
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
- var userLanguage ; 
- var userFullName ;
- 
- var firstName;
-  var lastName;
- var access_token=null;
-var user_id=null;
-var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
-var diff;
-var botuser;
-var hiflag;
-var bot = {};
-	//getJWT();
+
 /*if(/fa-ext/.test(Servlet_uri)){
 	getJWT();
 }else
@@ -38,23 +20,25 @@ var bot = {};
 	var space = document.createElement("span");
     space.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
    // variables for the additional styling and clear button - ends here
+ function set_localstorage(){
+ userLanguage = document.getElementById("easyAdoptLocale").value; 
+ userFullName = document.getElementById("easyAdoptUserName").value; 
+  var n = userFullName.indexOf(" ");
+  firstName = userFullName.substring(0, n);
+  lastName = userFullName.substring(n,userFullName.length);	 
+  var fap = window.location.host.split('-')[1];
 
-	 
-	}
-		Bots.on('ready', function(){
-		console.log('the init has completed!');
-		console.log(Bots.getUser());
-		//var userdetails = Bots.getUser();
-		//var user = userdetails["givenName"];
-		retrievedObject = localStorage.getItem('bot');
-		bot=JSON.parse(retrievedObject);
-		hiflag = bot['hiflag'];
-		if(diff >= 120 || botuser!=user_id || hiflag==false){
-		//Bots.sendMessage("Hi");
-		bot['hiflag']=true;
-		localStorage.setItem('bot', JSON.stringify(bot));
-		}
-		
+	var retrievedObject = localStorage.getItem('bot');
+	if(retrievedObject===null){
+		console.log('retrievedObject: ', retrievedObject);
+	 var startDate = new Date();
+		 
+		  bot['botuser']=user_id;
+			bot['time']=startDate;
+			bot['hiflag']=false;
+			//Put the object into storage
+			localStorage.setItem('bot', JSON.stringify(bot));
+			retrievedObject = localStorage.getItem('bot');
 	}); 
 	  Bots.init({   
 		appId: appId,	
@@ -79,12 +63,12 @@ var bot = {};
 	   .then(function addCustomTagStyling() {
 		   
 		 Bots.updateUser({
-			"givenName": firstName,
-			"surname": lastName,
-			"access_token": access_token,			
+			"givenName": "Poornima",
+			"surname": "Balagopal",
+			//"access_token": access_token,			
 			 properties: {
-			  language: userLanguage,
-			  fullName: userFullName
+			  //language: userLanguage,
+			  //fullName: userFullName
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
