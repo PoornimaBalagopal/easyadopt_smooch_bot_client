@@ -2,11 +2,29 @@
   function o(){try{var e;if((e="string"==typeof this.response?JSON.parse(this.response):this.response).url){var t=n.getElementsByTagName("script")[0],r=n.createElement("script");r.async=!0,r.src=e.url,t.parentNode.insertBefore(r,t)}}catch(e){}}var s,p,a,i=[],c=[];e[t]={init:function(){s=arguments;var e={then:function(n){return c.push({type:"t",next:n}),e},catch:function(n){return c.push({type:"c",next:n}),e}};return e},on:function(){i.push(arguments)},render:function(){p=arguments},destroy:function(){a=arguments}},        e.__onWebMessengerHostReady__=function(n){if(delete e.__onWebMessengerHostReady__,e[t]=n,s)for(var r=n.init.apply(n,s),o=0;o<c.length;o++){var u=c[o];r="t"===u.type?r.then(u.next):r.catch(u.next)}p&&n.render.apply(n,p),a&&n.destroy.apply(n,a);for(o=0;o<i.length;o++)n.on.apply(n,i[o])};var u=new XMLHttpRequest;u.addEventListener("load",o), u.addEventListener("load", s), u.open("GET", r+"/loader.json", !0),u.responseType = "json", u.send()
     }(window, document, "Bots", "https://eabotclient.herokuapp.com/scripts");
 
+// this will clear the chatlog and reinitialize the bot when the page gets loaded/reloaded - starts here
+  /*var keys = Object.keys(localStorage);
+  for(var i = 0; i < keys.length; i++){
+    localStorage.removeItem(keys[i]);
+  }
+  Bots.destroy(); */
   var appId = "5ca5945ea1e73000102b025a";
    Bots.on("ready", changeAllTags);
   Bots.on("message:received", changeLastMessage);
   Bots.on("message:received", deleteTagsInCarouselPreview);
-
+ var userLanguage ; 
+ var userFullName ;
+ 
+ var firstName;
+  var lastName;
+ var access_token=null;
+var user_id=null;
+var Servlet_uri = "https://"+window.location.host+"/fscmRestApi/tokenrelay";
+var diff;
+var botuser;
+var hiflag;
+var bot = {};
+	//getJWT();
 /*if(/fa-ext/.test(Servlet_uri)){
 	getJWT();
 }else
@@ -39,7 +57,44 @@
 			//Put the object into storage
 			localStorage.setItem('bot', JSON.stringify(bot));
 			retrievedObject = localStorage.getItem('bot');
-	}; 
+	}
+	var retreivedbotvalues = JSON.parse(retrievedObject);	
+	botuser = retreivedbotvalues["botuser"];
+	var lastDate = new Date(retreivedbotvalues["time"]);
+	hiflag = retreivedbotvalues["hiflag"];	
+	var startDate = new Date();
+	diff =(startDate.getTime() - lastDate.getTime()) / 1000;
+	  diff /= 60;
+	//clear the local storage if the logged-in user is different or time exceeds 2 hrs
+	
+	if(diff > 120 || botuser!=user_id){    
+	var keys = Object.keys(localStorage);
+     for(var i = 0; i < keys.length; i++){
+      localStorage.removeItem(keys[i]);
+     }
+     Bots.destroy();
+	 var startDate = new Date();
+	   bot['botuser']=user_id;
+		bot['time']=startDate;
+		bot['hiflag']=false;
+		//Put the object into storage
+		localStorage.setItem('bot', JSON.stringify(bot));
+	}
+		Bots.on('ready', function(){
+		console.log('the init has completed!');
+		console.log(Bots.getUser());
+		//var userdetails = Bots.getUser();
+		//var user = userdetails["givenName"];
+		retrievedObject = localStorage.getItem('bot');
+		bot=JSON.parse(retrievedObject);
+		hiflag = bot['hiflag'];
+		if(diff >= 120 || botuser!=user_id || hiflag==false){
+		//Bots.sendMessage("Hi");
+		bot['hiflag']=true;
+		localStorage.setItem('bot', JSON.stringify(bot));
+		}
+		
+	}); 
 	  Bots.init({   
 		appId: appId,	
 		fixedIntroPane: true,	
@@ -63,12 +118,12 @@
 	   .then(function addCustomTagStyling() {
 		   
 		 Bots.updateUser({
-			"givenName": "Poornima",
-			"surname": "Balagopal",
-			//"access_token": access_token,			
+			"givenName": firstName,
+			"surname": lastName,
+			"access_token": access_token,			
 			 properties: {
-			  //language: userLanguage,
-			  //fullName: userFullName
+			  language: userLanguage,
+			  fullName: userFullName
 		  }
 		})
 		 const chatFrame = document.getElementById("web-messenger-container").contentDocument;
