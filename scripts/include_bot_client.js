@@ -39,7 +39,7 @@
 			//Put the object into storage
 			localStorage.setItem('bot', JSON.stringify(bot));
 			retrievedObject = localStorage.getItem('bot');
-	}); 
+	}; 
 	  Bots.init({   
 		appId: appId,	
 		fixedIntroPane: true,	
