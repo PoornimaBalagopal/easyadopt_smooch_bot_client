@@ -24,7 +24,7 @@ var diff;
 var botuser;
 var hiflag;
 var bot = {};
-	getJWT();
+	//getJWT();
 /*if(/fa-ext/.test(Servlet_uri)){
 	getJWT();
 }else
@@ -38,47 +38,8 @@ var bot = {};
 	var space = document.createElement("span");
     space.innerHTML="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
    // variables for the additional styling and clear button - ends here
- function set_localstorage(){
- userLanguage = document.getElementById("easyAdoptLocale").value; 
- userFullName = document.getElementById("easyAdoptUserName").value; 
-  var n = userFullName.indexOf(" ");
-  firstName = userFullName.substring(0, n);
-  lastName = userFullName.substring(n,userFullName.length);	 
-  var fap = window.location.host.split('-')[1];
 
-	var retrievedObject = localStorage.getItem('bot');
-	if(retrievedObject===null){
-		console.log('retrievedObject: ', retrievedObject);
-	 var startDate = new Date();
-		 
-		  bot['botuser']=user_id;
-			bot['time']=startDate;
-			bot['hiflag']=false;
-			//Put the object into storage
-			localStorage.setItem('bot', JSON.stringify(bot));
-			retrievedObject = localStorage.getItem('bot');
-	}
-	var retreivedbotvalues = JSON.parse(retrievedObject);	
-	botuser = retreivedbotvalues["botuser"];
-	var lastDate = new Date(retreivedbotvalues["time"]);
-	hiflag = retreivedbotvalues["hiflag"];	
-	var startDate = new Date();
-	diff =(startDate.getTime() - lastDate.getTime()) / 1000;
-	  diff /= 60;
-	//clear the local storage if the logged-in user is different or time exceeds 2 hrs
-	
-	if(diff > 120 || botuser!=user_id){    
-	var keys = Object.keys(localStorage);
-     for(var i = 0; i < keys.length; i++){
-      localStorage.removeItem(keys[i]);
-     }
-     Bots.destroy();
-	 var startDate = new Date();
-	   bot['botuser']=user_id;
-		bot['time']=startDate;
-		bot['hiflag']=false;
-		//Put the object into storage
-		localStorage.setItem('bot', JSON.stringify(bot));
+	 
 	}
 		Bots.on('ready', function(){
 		console.log('the init has completed!');
