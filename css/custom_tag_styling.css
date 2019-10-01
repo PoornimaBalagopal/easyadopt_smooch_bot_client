@@ -1,10 +1,9 @@
-ea-header, ea-mainresponse, ea-inresplink, ea-footer, ea-info {    
-  padding: 10px 0px;
+ea-header, ea-mainresponse, ea-inresplink, ea-footer, ea-info {
+    padding: 10px 0px;
 }
 
 ea-header {
-    font-weight: bold; 
-   padding-right: 20px; 
+    font-weight: bold;
 }
 
 ea-mainresponse {
@@ -50,4 +49,8 @@ ol {
 
 #container #conversation .row.left-row .msg-wrapper .msg {
     background: #f8f8f9;
+}
+
+.carousel-content{
+    height: inherit !important;
 }
