@@ -31,23 +31,23 @@ function unescapeMessage(message) {
 }
 
 function ea_video(node) {
-    node.outerHTML = '<iframe width="100%" src="' + node.innerHTML + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`';
+    node.outerHTML = `<iframe width="100%" src="${node.innerHTML}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 };
 
 function ea_footer(node) {
-    node.outerHTML = '<ea-footer>' + node.innerHTML + '</ea-footer>';
+    node.outerHTML = `<ea-footer>${node.innerHTML}</ea-footer>`;
 }
 
 function ea_steps(node) {
-    node.outerHTML = '<ol class="ea-steps">' + node.innerHTML + '</ol>';
+    node.outerHTML = `<ol class="ea-steps">${node.innerHTML}</ol>`;
 }
 
 function ea_step(node)  {
-    node.outerHTML = '<li class="ea-step">' + node.innerHTML + '</li>';
+    node.outerHTML = `<li class="ea-step">${node.innerHTML}</li>`;
 }
 
 function ea_link(node) {
-    node.outerHTML = '<a target="_blank" href="' + node.attributes.href.value + '">' + node.innerHTML + '</li>';
+    node.outerHTML = `<a target="_blank" href="${node.attributes.href.value}">${node.innerHTML}</li>`
 }
 
 function changeAllTags() {
@@ -56,11 +56,9 @@ function changeAllTags() {
 
     const botMessages = chatFrame.querySelectorAll(".msg-wrapper .msg:not(.msg-carousel):not(.right-row)");
     
-    botMessages.forEach( function(msg)
-    {
+    botMessages.forEach(msg => {
         if (!/ea-/g.test(msg.innerHTML)) return; // Only edit our customizable elements
-        msg.innerHTML = unescapeMessage(msg.innerHTML);  
-        console.log("unescaped " + msg.innerHTML);
+        msg.innerHTML = unescapeMessage(msg.innerHTML);
     });
 
     chatFrame.querySelectorAll("ea-video").forEach(ea_video);
@@ -94,8 +92,7 @@ function deleteTagsInCarouselPreview(messageReceived) {
     const chatFrame = document.getElementById("web-messenger-container").contentDocument;
     const carouselItems = chatFrame.querySelectorAll(".msg-carousel .carousel-item .carousel-description");
 
-    carouselItems.forEach(function(msg){		
-        msg.innerHTML = deleteTags(msg.innerHTML);	
-        console.log("delete tags for " + msg.innerHTML);	
+    carouselItems.forEach(msg => {		
+        msg.innerHTML = deleteTags(msg.innerHTML);		
     });
 }
