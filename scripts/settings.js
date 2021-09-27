@@ -9,7 +9,7 @@ const isClientAuthEnabled = false;
  *
  * @param {string} name Name by which the chat widget should be referred
  */
-function initSdk(name) { {
+function initSdk(name) {
 	 if (!document || !WebSDK) {
         setTimeout(function() {
             initSdk(name);
