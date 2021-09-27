@@ -1,0 +1,48 @@
+.wrapper {
+    background-color: lavenderblush;
+    font-family: Georgia, Times, serif;
+}
+
+.header,
+.footer {
+    text-align: center;
+    color: #A6191E;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    clear: both;
+}
+
+.content {
+    border: 2px solid;
+    border-color: #2C5967;
+    color: #2C5967;
+    padding: 40px;
+    margin: 20px 0;
+    float: left;
+}
+
+.chatbox {
+    float: right;
+    font-size: small;
+    background-color: lightsteelblue;
+}
+
+#chat-container {
+    messagePadding: 4px !important;
+}
+
+.oda-chat-message-bubble {
+    padding: 10px !important;
+}
+
+.oda-chat-message-bubble {
+    font: 12px !important;
+}
+
+.oda-chat-message-global-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    margin-top: 16px;
+    flex-wrap: wrap !important;
+    align-content: space-around !important;
+}
