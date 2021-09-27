@@ -22,23 +22,35 @@ const initSdk = (name) => {
          * In client auth disabled mode, 'channelId' must be passed, 'userId' is optional
          * In client auth enabled mode, 'clientAuthEnabled: true' must be passed
          */
-        let chatWidgetSettings = {
-            font: '12px "Helvetica Neue", Helvetica, Arial, sans-serif',
-            showConnectionStatus: true, // for showing connection status as connected or ready in the chat window
-            enableTimestamp: false,
-            conversationBeginPosition: 'bottom', // for conversation to begin at the bottom
-            openChatOnLoad: true,
-            position: { bottom: '20px', right: '20px' },
+        var chatWidgetSettings = {
+             URI: 'gc3odaejas01-gc35001.botmxp.ocp.oraclecloud.com', // the domain where you want to host your bot
+            clientAuthEnabled: isClientAuthEnabled,     // Enables client auth enabled mode of connection if set true
+          //  channelId: 'a8a484d4-c319-4420-a4d6-7351d44dae1d',                   // Channel ID, available in channel settings in ODA UI
+		   channelId: '6117d24b-f313-416c-aa7f-58c7672585aa', // here goes the channel id of the web channel you configure, hidden due to security
+            // userId: '<userID>',                      // User ID, optional field to personalize user experience
+            enableAutocomplete: true,                   // Enables autocomplete suggestions on user input
+           // enableBotAudioResponse: true,               // Enables audio utterance of skill responses
+            enableClearMessage: true,                   // Enables display of button to clear conversation
+            enableSpeech: false,                         // Enables voice recognition
+           // speechLocale: WebSDK.SPEECH_LOCALE.EN_US,   // Sets locale used to speak to the skill, the SDK supports EN_US, FR_FR, and ES_ES locales for speech
+            showConnectionStatus: true,                 // Displays current connection status on the header
+			//initBotAudioMuted:true,  //Initializes the skill message utterance in muted mode. This feature can only be activated when you set enableBotAudioResponse to true
+			openChatOnLoad:false,   //Flag to expand chat widget when page is loaded
+			conversationBeginPosition: 'bottom', // for conversation to begin at the bottom
+			//position: { bottom: '20px', right: '20px' },
             displayActionsAsPills: true, // just a ui feature to show action buttons 
             initUserHiddenMessage: 'Hello', // to intialize the conversation from bots side
-            embedded: true, // emebedded inside the web container
-           // targetElement: 'chat-container',
-           // embedTopScrollId: 'top-text',
-          // customHeaderElementId: 'custom-header', // to provide custom header name to the chat window
-            botButtonIcon: 'images/bot-button.png',
+			timestampMode: 'relative',                  // Sets the timestamp mode, relative to current time or default (absolute)
+            enableClearMessage: true,
+			botButtonIcon: 'images/bot-button.png',
             logoIcon: 'images/bot-white.png',
             botIcon: 'images/bot-green.png',
             personIcon: 'images/user-icon.png',
+			theme: 'classic',
+           // embedded: true,
+            //targetElement: 'chat-container',
+           // embedTopScrollId: 'top-text',
+            //customHeaderElementId: 'custom-header',
             i18n: { // element usefull for english language placeholders and also tool tip
                 en: {
 
@@ -50,30 +62,8 @@ const initSdk = (name) => {
                     inputPlaceholder: 'Type here', // Replaces Type a message
                     send: 'Send (Enter)' // Replaces Send tool tip
                 }
-            },
-            font: '12px Verdana, Geneva, sans-serif',
-            theme: 'classic',
-            embedded: true,
-            targetElement: 'chat-container',
-            embedTopScrollId: 'top-text',
-            customHeaderElementId: 'custom-header',
-            initUserProfile: { // for fetching the logged in user profile like first name
-                profile: {
-                    firstName: 'First',
-                    lastName: 'Last',
-                    email: 'first.last@example.com',
-                    properties: {
-                        lastOrderedItems: '1 medium pepperoni' // just a static text
-                    }
-                }
-            },
-            enableAutocomplete: true, // for autocomplete feature such as you are typing in " i want ..." It will automatically suggest you "i want to order pizza"
-            enableAutocompleteClientCache: true, // Minimizes server calls when user uses autocomplete feature
-            enableBotAudioResponse: true, //if you want your bot to read aloud your response
-
-            URI: 'gc3odaejas01-gc35001.botmxp.ocp.oraclecloud.com', // the domain where you want to host your bot
-            clientAuthEnabled: isClientAuthEnabled, // variable to store the value if client authetication is enabled
-            channelId: '6117d24b-f313-416c-aa7f-58c7672585aa' // here goes the channel id of the web channel you configure, hidden due to security
+            }
+           
         };
 
         // Initialize SDK
@@ -84,9 +74,7 @@ const initSdk = (name) => {
         }
 
         // Connect to the ODA
-        Bots.connect().then(() => {
-            Bots.setUserInputMessage("Hi");
-        })
+       
 
         // Create global object to refer Bots
         window[name] = Bots;
