@@ -63,7 +63,7 @@ function initSdk(name) { {
             }
         };
 
-        // Initialize SDK
+       // Initialize SDK
         if (isClientAuthEnabled) { // check if authentication is enabled 
             Bots = new WebSDK(chatWidgetSettings, generateToken); // if yes generate a token
         } else {
@@ -71,11 +71,9 @@ function initSdk(name) { {
         }
 
         // Connect to the ODA
-        Bots.connect().then(() => {
-            Bots.setUserInputMessage("Hi");
-        })
+       
 
         // Create global object to refer Bots
         window[name] = Bots;
     }, 0);
-};
+}
