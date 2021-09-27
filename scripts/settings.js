@@ -50,9 +50,9 @@ function initSdk(name) {
             initUserHiddenMessage: 'Hello', // to intialize the conversation from bots side
 			timestampMode: 'relative',                  // Sets the timestamp mode, relative to current time or default (absolute)
             enableClearMessage: true,
-			botButtonIcon: 'images/bot-button.png',
-            logoIcon: 'images/bot-white.png',
-            botIcon: 'images/bot-green.png',
+			botButtonIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-button.png',
+            logoIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-white.png',
+            botIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-green.png',
             personIcon: 'images/user-icon.png',
 			font: '12px Verdana, Geneva, sans-serif',
             theme: 'classic',
