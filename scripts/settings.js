@@ -31,10 +31,10 @@ function initSdk(name) {
          * In client auth enabled mode, 'clientAuthEnabled: true' must be passed
          */
         var chatWidgetSettings = {
-             URI: 'gc3odaejas01-gc35001.botmxp.ocp.oraclecloud.com', // the domain where you want to host your bot
+             URI: 'oda-fd67a4cd1ad347edaf86cf1f5fadfd0e-da12.data.digitalassistant.oci.oraclecloud.com', // the domain where you want to host your bot
             clientAuthEnabled: isClientAuthEnabled,     // Enables client auth enabled mode of connection if set true
           //  channelId: 'a8a484d4-c319-4420-a4d6-7351d44dae1d',                   // Channel ID, available in channel settings in ODA UI
-		   channelId: '6117d24b-f313-416c-aa7f-58c7672585aa', // here goes the channel id of the web channel you configure, hidden due to security
+		   channelId: '3075ce5f-72c9-4120-bd02-be38a07e5c27', // here goes the channel id of the web channel you configure, hidden due to security
             // userId: '<userID>',                      // User ID, optional field to personalize user experience
             enableAutocomplete: true,                   // Enables autocomplete suggestions on user input
            // enableBotAudioResponse: true,               // Enables audio utterance of skill responses
