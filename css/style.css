@@ -2,7 +2,6 @@
     background-color: lavenderblush;
     font-family: Georgia, Times, serif;
 }
-
 .header,
 .footer {
     text-align: center;
@@ -11,7 +10,6 @@
     font-family: Arial, Helvetica, sans-serif;
     clear: both;
 }
-
 .content {
     border: 2px solid;
     border-color: #2C5967;
@@ -20,25 +18,20 @@
     margin: 20px 0;
     float: left;
 }
-
 .chatbox {
     float: right;
     font-size: small;
     background-color: lightsteelblue;
 }
-
 #chat-container {
     messagePadding: 4px !important;
 }
-
 .oda-chat-message-bubble {
     padding: 10px !important;
 }
-
 .oda-chat-message-bubble {
     font: 12px !important;
 }
-
 .oda-chat-message-global-actions {
     display: flex !important;
     flex-direction: row !important;
