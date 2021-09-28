@@ -53,7 +53,7 @@ function initSdk(name) {
 			botButtonIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-button.png',
             logoIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-white.png',
             botIcon: 'https://easyadopt-bot-client.herokuapp.com/images/bot-green.png',
-            personIcon: 'images/user-icon.png',
+            personIcon: 'https://easyadopt-bot-client.herokuapp.com/images/user-icon.png',
 			font: '12px Verdana, Geneva, sans-serif',
             theme: 'classic',
            // embedded: true,
