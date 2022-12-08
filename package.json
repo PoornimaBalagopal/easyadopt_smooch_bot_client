@@ -4,13 +4,13 @@
   "description": "[![npm version](https://badge.fury.io/js/smooch.svg)](http://badge.fury.io/js/smooch)",
   "author": "Poornima Balagopal, Oracle SSI",
   "dependencies": {
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.20.1",
     "bootstrap": "*",
     "compression": "*",
     "core-js": "^2.4.1",
     "cors": "^2.7.1",
-    "express": "^4.13.4",
-    "http-server": "^0.9.0",
+    "express": "^4.18.2",
+    "http-server": "^14.1.1",
     "https": "^1.0.0",
     "express-sse": "*"
   },
