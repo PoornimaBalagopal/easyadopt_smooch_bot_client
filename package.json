@@ -9,7 +9,7 @@
     "compression": "*",
     "core-js": "^2.4.1",
     "cors": "^2.7.1",
-    "express": "^4.13.4",
+    "express": "^4.17.3",
     "http-server": "^0.9.0",
     "https": "^1.0.0",
     "express-sse": "*"
